@@ -1,0 +1,437 @@
+/*//////////////////////////////////
+===== Card - input Filed START =====
+//////////////////////////////////*/
+.card-input {
+  min-width: 0;
+  height: 100%;
+  word-wrap: break-word;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14),
+              0px 3px 1px -2px rgba(0, 0, 0, 0.12),
+              0px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 16px 0;
+}
+.card-input.card-row {
+  display: flex;
+  align-items: center;
+}
+.card-input.card-column {
+  display: flex;
+  flex-direction: column;
+}
+/*----- card-head -----*/
+.card-input .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $color-grey-40;
+}
+/*----- card-body -----*/
+.card-input .card-body {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+/*----- card-head title-set -----*/
+.card-input .title-set {
+  display: flex;
+  align-items: center;
+}
+.card-input .card-head .title-set h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $text-color-primary;
+}
+.card-input .card-head .title-set h2 span {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $color-primary-default;
+}
+.card-input .card-head .title-set small {
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
+  color: $text-color-tertiary;
+  margin-left: 8px;
+}
+
+
+/*////////////////////////////
+===== 資料建立表單 setting =====
+///////////////////////////*/
+/*----- card-body FORM -----*/
+.card-input .card-body form {
+  width: 100%;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.card-input .card-body .input-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+.card-input .card-body .radio-item,
+.card-input .card-body .input-item,
+.card-input .card-body .select-item,
+.card-input .card-body .textarea-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.card-input .card-body .textarea-item {
+  align-items: flex-start;
+}
+.card-input .card-body .radio-item .sub-title,
+.card-input .card-body .select-item .sub-title,
+.card-input .card-body .input-item .sub-title,
+.card-input .card-body .textarea-item .sub-title {
+  width: 80px;
+}
+
+/*/////////////////////////////////
+===== Card - input text filed =====
+/////////////////////////////////*/
+.card-input .card-body .input-item .sub-title span {
+  font-size: 12px;
+  line-height: 1.33;
+  color: $text-color-secondary;
+}
+.card-input .card-body .input-item input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 2px solid $color-grey-50;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $text-color-primary;
+  transition: .1s;
+}
+.card-input .card-body form input[type="text"]::placeholder {
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-grey-50;
+}
+
+
+/*//////////////////////////////
+===== Card - dropdown menu =====
+//////////////////////////////*/
+.card-input .card-body form .input-wrap {
+  flex:1;
+  position: relative;
+}
+/*----- 下拉選單 外框設定 -----*/
+.card-input .card-body .select-item select {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 2px solid $color-grey-50;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $text-color-primary;
+  transition: .1s;
+  appearance: none; /*隱藏原生箭頭*/
+}
+/*----- 下拉選單 [請選擇XXX] 顏色設定 -----*/
+/*-----  需在 select 搭配 required -----*/
+.card-input .card-body .select-item select:invalid {
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-grey-50;
+}
+
+/*----- 下拉選單 icon -----*/
+.card-input .card-body form .input-wrap.icon-select::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../image/icon_expand_more.svg);
+  background-size: contain;
+  z-index: 1;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+
+/*/////////////////////////////
+===== Card - switch button=====
+/////////////////////////////*/
+/*----- switch button -----*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input[type="checkbox"] { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-grey-30;
+  box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8EAEA 100%);
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.25);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: $color-primary-default;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 100px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+/*///////////////////////////////
+===== Card - submit buttons =====
+///////////////////////////////*/
+input[type="submit"] {
+  display: none;
+}
+.card-input .add-submit,
+.card-input .edit-submit {
+  padding: 8px 20px;
+  background-color: $color-primary-light;
+  border: 2px solid $color-primary-default;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-primary-default;
+  cursor: pointer;
+}
+
+// .card-input .card-body form button {
+//   border: 0;
+//   padding: 8px 50px;
+//   background-color: $color-primary-light;
+//   border: 2px solid $color-primary-default;
+//   border-radius: 100px;
+//   font-size: 14px;
+//   line-height: 1.4;
+//   text-align: center;
+//   color: $color-primary-default;
+//   cursor: pointer;
+// }
+
+/*///////////////////////////////
+===== Card - input textarea =====
+///////////////////////////////*/
+.card-input .card-body .textarea-item {
+  align-items: flex-start;
+}
+.card-input .card-body .textarea-item .sub-title {
+  margin-top: 10px;
+}
+.card-input .textarea-item .textarea-wrap {
+  flex: 1;
+  min-height: 150px;
+}
+.card-input .textarea-item textarea {
+  width: 100%;
+  height: 100%;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 2px solid $color-grey-50;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $text-color-primary;
+  resize: none;
+  transition: .1s;
+  appearance: none; /*隱藏原生箭頭*/
+  text-align: left;
+}
+
+/*/////////////////////////////
+===== Card - Radio Botton =====
+/////////////////////////////*/
+.card-input .radio-selection {
+  display: flex;
+  flex: 1;
+}
+.card-input .radio-selection .selection-1,
+.card-input .radio-selection .selection-2 {
+  flex: 1;
+}
+.card-input .radio-selection input[type=radio] {
+  position: absolute;
+  display: none;
+}
+.card-input .radio-selection .selection-1 label,
+.card-input .radio-selection .selection-2 label {
+  position: relative;
+  display: block;
+  padding: 8px 20px 8px 52px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  background-color: #fff;
+  color: $text-color-primary;
+}
+.card-input .radio-selection .selection-1 label {
+  border: 2px solid $color-grey-50;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+}
+.card-input .radio-selection .selection-2 label {
+  border: 2px solid $color-grey-50;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+form .radio-selection input[type=radio]:checked ~ label {
+  border:2px solid $color-primary-default;
+  background-color: $color-primary-light;
+}
+
+/*----- 點擊後圈圈 -----*/
+.card-input .radio-selection .selection-1 label::before,
+.card-input .radio-selection .selection-2 label::before {
+  content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 2px solid $color-grey-50;
+    background-color: #fff;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    transition: .1s;
+}
+.card-input .radio-selection input[type=radio]:checked ~ label::before {
+  border: 6px solid $color-primary-default;
+}
+
+
+/*////////////////////////////////
+===== Card - input  READONLY =====
+////////////////////////////////*/
+.card-input .card-body .input-item .sub-title span {
+  font-size: 12px;
+  line-height: 1.33;
+  color: $text-color-secondary;
+}
+.card-input .card-body .select-item.readonly select:disabled,
+.card-input .card-body .textarea-item.readonly textarea:disabled,
+.card-input .card-body .input-item.readonly input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 2px solid $color-grey-50;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $text-color-primary;
+  background-color: $color-grey-20;
+  transition: .1s;
+  opacity: 1;
+}
+.card-input .card-body form input[type="text"]::placeholder {
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-grey-50;
+}
+
+.card-input .add-submit.readonly,
+.card-input .edit-submit.readonly {
+  padding: 8px 20px;
+  background-color: $color-grey-30;
+  border: 2px solid $color-grey-30;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-white;
+}
+
+.card-input .card-body .input-item.readonly input:checked + .slider {
+  background-color: $color-grey-50;
+}
+
+.card-input .radio-item.readonly .radio-selection .selection-1 label,
+.card-input .radio-item.readonly .radio-selection .selection-2 label {
+  position: relative;
+  display: block;
+  padding: 8px 20px 8px 52px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  background-color: #fff;
+  color: $text-color-primary;
+}
+.card-input .radio-selection .selection-1 label {
+  border: 2px solid $color-grey-50;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+}
+.card-input .radio-selection .selection-2 label {
+  border: 2px solid $color-grey-50;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+.card-input .radio-item.readonly .radio-selection input[type=radio]:checked ~ label {
+  border:2px solid $color-grey-50;
+  background-color: $color-grey-20;
+}
+.card-input .radio-item.readonly .radio-selection .selection-1 label::before,
+.card-input .radio-item.readonly .radio-selection .selection-2 label::before {
+  content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 2px solid $color-grey-50;
+    background-color: #fff;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    transition: .1s;
+}
+.card-input .radio-item.readonly .radio-selection input[type=radio]:checked ~ label::before {
+  border: 6px solid $color-grey-50;
+}

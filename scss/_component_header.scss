@@ -1,0 +1,60 @@
+
+/*///////////////////////////////
+===== header Section START =====
+///////////////////////////////*/
+.header-section {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 
+              0px 1px 18px rgba(0, 0, 0, 0.12),
+              0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+/*----- header-content -----*/
+.header-content {
+  padding: 16px 24px;
+  display: flex;
+}
+
+/*----- logo-set -----*/
+.logo-set {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.logo-set h1 {
+  width: 84.5px;
+}
+.logo-set p {
+  font-family: $font-NotoTC;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: medium;
+  color: $text-color-primary;
+}
+
+/*----- tool-bar -----*/
+.toolbar-list {
+  display: flex;
+  margin-left: auto;
+}
+.toolbar-item a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  display: flex;
+}
+.toolbar-item img {
+  vertical-align: middle;
+}
+.avatar-wrap {
+  border-radius: 50px;
+  overflow: hidden;
+}
+.avatar-wrap,
+.icon-wrap {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}

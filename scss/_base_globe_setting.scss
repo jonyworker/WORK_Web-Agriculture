@@ -1,0 +1,17 @@
+
+/*/////////////////////////////
+===== Globe Setting START =====
+/////////////////////////////*/
+* {
+	// outline: 1px solid #5a7;
+}
+.container-self {
+	max-width: 100%;
+}
+.main-info-section {
+	flex: 1;
+	height: 100vh;
+	background-color: $color-grey-30;
+	display: flex;
+	flex-direction: column;
+} 
